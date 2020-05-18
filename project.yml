@@ -1,0 +1,11 @@
+name: PokedexSample
+fileGroups:
+targets:
+  PokedexSample:
+    type: application
+    platform: iOS
+    sources: [PokedexSample]
+    settings:
+      CURRENT_PROJECT_VERSION: 1
+    dependencies:
+      - carthage: Alamofire
