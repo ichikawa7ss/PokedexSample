@@ -1,4 +1,7 @@
 name: PokedexSample
+options: 
+    deploymentTarget:
+        iOS: 11.0
 fileGroups:
 targets:
   PokedexSample:
