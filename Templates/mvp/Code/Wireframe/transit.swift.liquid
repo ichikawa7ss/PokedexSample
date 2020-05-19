@@ -8,26 +8,25 @@
 
 import UIKit
 
-final class {{ module_info.name }}Router: {{ module_info.name }}Wireframe {
+protocol TransitTo{{ module_info.name }}Wireframe: AnyObject {
 
-    weak var viewController: UIViewController?
+    var viewController: UIViewController? { get }
 
-    static func assembleModule() -> UIViewController {
-        let view = {{ module_info.name }}ViewController.instantiate()
-        let presenter = {{ module_info.name }}Presenter()
-        let interactor = {{ module_info.name }}Interactor()
-        let router = {{ module_info.name }}Router()
-
-        view.presenter = presenter
-
-        presenter.view = view
-        presenter.interactor = interactor
-        presenter.router = router
-
-        interactor.output = presenter
-
-        router.viewController = view
-
-        return view
-    }
+    // func push{{ module_info.name }}()
+    // func present{{ module_info.name }}()
 }
+
+extension TransitTo{{ module_info.name }}Wireframe {
+
+    //func push{{ module_info.name }}() {
+    //    let vc = {{ module_info.name }}Builder.build()
+    //    self.viewController?.navigationController?.pushViewController(vc, animated: true)
+    //}
+
+    //func present{{ module_info.name }}() {
+    //    let vc = {{ module_info.name }}Builder.build()
+    //    self.viewController?.present(vc, animated: true, completion: nil)
+    //}
+}
+
+//protocol {{ module_info.name }}WireframeDelegate: AnyObject {}

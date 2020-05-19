@@ -1,4 +1,3 @@
-
 //
 //  {{ module_info.file_name }}
 //  {{ module_info.project_name }}
@@ -9,23 +8,9 @@
 
 import UIKit
 
-protocol TransitTo{{ module_info.name }}Wireframe {
+protocol {{ module_info.name }}Wireframe: AnyObject {}
 
-    var viewController: UIViewController { get }
+final class {{ module_info.name }}WireframeImpl: {{ module_info.name }}Wireframe {
 
-    // func push{{ module_info.name }}()
-    // func present{{ module_info.name }}()
-}
-
-extension TransitTo{{ module_info.name }}Wireframe {
-
-    //func push{{ module_info.name }}() {
-    //    let vc = {{ module_info.name }}Builder.build()
-    //    self.viewController?.navigationController?.pushViewController(vc, animated: true)
-    //}
-
-    //func present{{ module_info.name }}() {
-    //    let vc = {{ module_info.name }}Builder.build()
-    //    self.viewController?.present(vc, animated: true, completion: nil)
-    //}
+    weak var viewController: UIViewController?
 }
