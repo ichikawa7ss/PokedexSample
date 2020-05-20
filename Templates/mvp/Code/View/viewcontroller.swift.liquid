@@ -8,17 +8,22 @@
 
 import UIKit
 
-// MARK: - vars and life cycle
+protocol {{ module_info.name }}View: AnyObject {}
+
+// MARK: - Properties
 final class {{ module_info.name }}ViewController: UIViewController {
 
-    var presenter: {{ module_info.name }}Presentation!
+    var presenter: {{ module_info.name }}Presenter!
+}
+
+// MARK: - Life cycle
+extension {{ module_info.name }}ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 }
 
-
-// MARK: - {{module_info.name}}ViewInterface
-extension {{ module_info.name }}ViewController: {{module_info.name}}ViewInterface {
+// MARK: - {{module_info.name}}View
+extension {{ module_info.name }}ViewController: {{module_info.name}}View {
 }
