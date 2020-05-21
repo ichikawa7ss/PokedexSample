@@ -11,6 +11,7 @@ targets:
     settings:
       CURRENT_PROJECT_VERSION: 1
       PRODUCT_BUNDLE_IDENTIFIER: pokedexSample
+      CODE_SIGN_STYLE: Automatic
     dependencies:
     - target: API
     - target: Presentation
@@ -20,6 +21,7 @@ targets:
     sources: [API]
     setting:
         PRODUCT_BUNDLE_IDENTIFIER: pokedexSample.API
+        CODE_SIGN_STYLE: Automatic
     dependencies:
       - carthage: Alamofire
   Presentation:
@@ -28,3 +30,4 @@ targets:
     sources: [Presentation]
     setting:
         PRODUCT_BUNDLE_IDENTIFIER: pokedexSample.Presentation
+        CODE_SIGN_STYLE: Automatic
