@@ -1,0 +1,33 @@
+name: PokedexSample
+options: 
+    deploymentTarget:
+        iOS: 11.0
+fileGroups:
+targets:
+  PokedexSample:
+    type: application
+    platform: iOS
+    sources: [PokedexSample]
+    settings:
+      CURRENT_PROJECT_VERSION: 1
+      PRODUCT_BUNDLE_IDENTIFIER: pokedexSample
+      CODE_SIGN_STYLE: Automatic
+    dependencies:
+    - target: API
+    - target: Presentation
+  API:
+    type: framework
+    platform: iOS
+    sources: [API]
+    setting:
+        PRODUCT_BUNDLE_IDENTIFIER: pokedexSample.API
+        CODE_SIGN_STYLE: Automatic
+    dependencies:
+      - carthage: Alamofire
+  Presentation:
+    type: framework
+    platform: iOS
+    sources: [Presentation]
+    setting:
+        PRODUCT_BUNDLE_IDENTIFIER: pokedexSample.Presentation
+        CODE_SIGN_STYLE: Automatic
