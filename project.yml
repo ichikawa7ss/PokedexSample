@@ -13,14 +13,15 @@ targets:
       PRODUCT_BUNDLE_IDENTIFIER: pokedexSample
       CODE_SIGN_STYLE: Automatic
     dependencies:
-    - target: API
     - target: Presentation
-  API:
+    - target: DataStore
+    - target: Domain
+  DataStore:
     type: framework
     platform: iOS
-    sources: [API]
+    sources: [DataStore]
     setting:
-        PRODUCT_BUNDLE_IDENTIFIER: pokedexSample.API
+        PRODUCT_BUNDLE_IDENTIFIER: pokedexSample.DataStore
         CODE_SIGN_STYLE: Automatic
     dependencies:
       - carthage: Alamofire
@@ -31,3 +32,15 @@ targets:
     setting:
         PRODUCT_BUNDLE_IDENTIFIER: pokedexSample.Presentation
         CODE_SIGN_STYLE: Automatic
+    dependencies:
+        - target: DataStore
+        - target: Domain
+  Domain:
+    type: framework
+    platform: iOS
+    sources: [Domain]
+    setting:
+        PRODUCT_BUNDLE_IDENTIFIER: pokedexSample.Domain
+        CODE_SIGN_STYLE: Automatic
+    dependencies:
+        - target: DataStore
